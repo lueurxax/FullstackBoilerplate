@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "one-var": ["error", "never"],
+    "no-console": 0,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2,
+    "indent": ["error", 2],
+    "require-jsdoc": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-tag-spacing": "error",
+    "arrow-parens": 0,
+    "max-len": ["error", 120],
+    "comma-dangle": 0,
+    "no-case-declarations": 0,
+    "object-curly-spacing": [2, "always"],
+    "no-invalid-this": 0,
+    "new-cap": ["error", { "capIsNew": false }],
+    "no-throw-literal": "warn",
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "classes": true,
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["async-await", "react"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "16", // React version, default to the latest React stable release
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never"
+    },
+    "propWrapperFunctions": [ "forbidExtraProps" ]
+  },
+  "globals": {
+    "localStorage": true,
+    "document": true,
+    "window": true,
+    "Image": true
+  }
+}

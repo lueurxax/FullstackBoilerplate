@@ -1,0 +1,105 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-eslint-rules"
+  ],
+  "jsRules": {
+    "one-var": [
+      "error",
+      "never"
+    ],
+    "no-console": false,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2,
+    "require-jsdoc": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-tag-spacing": "error",
+    "arrow-parens": false,
+    "max-line-length": {
+      "options": [
+        120
+      ]
+    },
+    "comma-dangle": 0,
+    "no-case-declarations": 0,
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "no-invalid-this": false,
+    "new-cap": [
+      "error",
+      {
+        "capIsNew": false
+      }
+    ]
+  },
+  "rules": {
+    "max-line-length": {
+      "options": [
+        120
+      ]
+    },
+    "object-curly-spacing": [
+      true,
+      "always"
+    ],
+    "array-type": [true, "array-simple"],
+    "arrow-parens": false,
+    "arrow-return-shorthand": true,
+    "ban": [true,
+      {"name": "parseInt", "message": "tsstyle#type-coercion"},
+      {"name": "parseFloat", "message": "tsstyle#type-coercion"},
+      {"name": "Array", "message": "tsstyle#array-constructor"}
+    ],
+    "ban-types": [true,
+      ["Object", "Use {} instead."],
+      ["String", "Use 'string' instead."],
+      ["Number", "Use 'number' instead."],
+      ["Boolean", "Use 'boolean' instead."]
+    ],
+    "class-name": false,
+    "curly": [true, "ignore-same-line"],
+    "forin": true,
+    "interface-name": [true, "never-prefix"],
+    "jsdoc-format": true,
+    "label-position": true,
+    "member-access": [true, "no-public"],
+    "new-parens": true,
+    "no-angle-bracket-type-assertion": true,
+    "no-any": true,
+    "no-arg": true,
+    "no-conditional-assignment": true,
+    "no-construct": true,
+    "no-console": [false, "log", "error"],
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-inferrable-types": true,
+    "no-namespace": [true, "allow-declarations"],
+    "no-reference": true,
+    "no-string-throw": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "object-literal-shorthand": true,
+    "object-literal-sort-keys": false,
+    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    "prefer-const": true,
+    "radix": true,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "quotemark": [true, "single"],
+    "switch-default": false,
+    "triple-equals": [true, "allow-null-check"],
+    "use-isnan": true,
+    "no-bitwise": false,
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-trailing-underscore",
+      "allow-pascal-case"
+    ]
+  },
+  "rulesDirectory": []
+}

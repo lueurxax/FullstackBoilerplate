@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "watch": [
+    "src/",
+    "config/",
+    "node_modules/"
+  ]
+}
