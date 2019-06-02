@@ -1,4 +1,4 @@
-import * as config from 'config';
+import config from 'config';
 import { createLogger, format, transports } from 'winston';
 const { combine, timestamp, align, colorize, printf } = format;
 

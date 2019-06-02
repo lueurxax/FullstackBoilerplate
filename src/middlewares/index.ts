@@ -1,17 +1,18 @@
-import * as cors from 'kcors';
-import * as compose from 'koa-compose';
-import * as favicon from 'koa-favicon';
-// import * as serve from 'koa-static';
+import cors from 'kcors';
+import compose from 'koa-compose';
+import favicon from 'koa-favicon';
+import serve from 'koa-static';
 import errors from './errors';
 import bodyParser from './bodyParser';
 import logger from './logger';
 import tracer from './tracer';
-import router from './router';
+import { loadRoutes } from './router';
 
 export default () => {
+  const router = loadRoutes();
   return compose([
     favicon(),
-    // serve('media'),
+    serve('swagger'),
     logger,
     errors(),
     cors(),

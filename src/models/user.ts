@@ -1,4 +1,4 @@
-import * as config from 'config';
+import config from 'config';
 import * as crypto from 'crypto';
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../libs/sequelize';

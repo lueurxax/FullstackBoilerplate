@@ -8,6 +8,8 @@
 * metrics
 * tracings
 * logs
+* joi
+* swagger
 ##### frontend
 * react
 * bootstrap

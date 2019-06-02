@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@hapi/joi": "^15.0.3",
     "@types/config": "^0.0.34",
     "@types/lodash": "^4.14.133",
     "@types/sequelize": "^4.28.3",
@@ -29,6 +30,7 @@
     "koa-bodyparser": "4.2.1",
     "koa-compose": "^4.1.0",
     "koa-favicon": "^2.0.1",
+    "koa-joi-swagger-ts": "^1.1.0",
     "koa-logger": "^3.2.0",
     "koa-opentracing": "latest",
     "koa-router": "^7.4.0",
@@ -50,8 +52,8 @@
     "reactstrap": "8.0.0",
     "sequelize": "^5.8.7",
     "winston": "^3.2.1",
-    "zipkin": "^0.18.1",
-    "zipkin-transport-http": "^0.18.1"
+    "zipkin": "^0.14.0",
+    "zipkin-transport-http": "^0.14.0"
   },
   "scripts": {
     "start:server": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",

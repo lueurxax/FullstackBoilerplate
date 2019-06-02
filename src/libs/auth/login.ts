@@ -1,8 +1,8 @@
-import * as config from 'config';
+import config from 'config';
 import logger from '../logger';
 import { User } from '../../models/user';
-import * as crypto from "crypto";
-import * as jwt from 'jsonwebtoken';
+import crypto from "crypto";
+import jwt from 'jsonwebtoken';
 import Error from '../error';
 
 interface TokenPayload {
@@ -83,7 +83,12 @@ export const checkPassword = (password: string, salt: string, passwordHash: stri
 };
 
 export const verify = (bearerToken: string): User => {
-  if (!bearerToken) return null;
+  if (!bearerToken) throw new Error({ message: 'need use bearer token for auth', code: 401});
   const token = bearerToken.replace('Bearer ', '');
-  return jwt.verify(token, config.get('secret'));
+  try {
+    return jwt.verify(token, config.get('secret'));
+  } catch (err) {
+    err.code = 401;
+    throw err
+  }
 };

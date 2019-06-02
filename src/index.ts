@@ -1,9 +1,10 @@
-import * as Koa from 'koa';
-const app = new Koa();
-import * as config from 'config';
+import Koa from 'koa';
+import config from 'config';
 
 import middleware from './middlewares';
 import { sync } from './libs/sequelize';
+
+const app = new Koa();
 
 sync().catch(console.error);
 

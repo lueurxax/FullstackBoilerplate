@@ -1,7 +1,7 @@
 /**
  * Created by xax on 26.06.2017.
  */
-import * as config from 'config';
+import config from 'config';
 import { Sequelize, Options } from 'sequelize';
 import logger from './logger';
 
