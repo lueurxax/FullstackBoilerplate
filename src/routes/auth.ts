@@ -1,5 +1,6 @@
 import { Context } from 'koa';
-import { authentication } from '../libs/auth/login';
+import { authentication, verify } from '../libs/auth/login';
+import logger from '../libs/logger';
 
 export const login = async (ctx: Context): Promise<void> => {
   const { email, password } = ctx.request.body;
@@ -12,9 +13,12 @@ export const login = async (ctx: Context): Promise<void> => {
 
   try {
     const token = await authentication(email, password);
+    const tomorrow = new Date();
+    // TODO need compare with config.get('expiresIn')
+    tomorrow.setDate(tomorrow.getDate() + 1);
     ctx.body = {
       token,
-      expiredAt: new Date(),
+      expiredAt: tomorrow,
     }
   } catch (err) {
     console.log(Object.keys(err));
@@ -25,6 +29,14 @@ export const login = async (ctx: Context): Promise<void> => {
 type KoaFuncRequest = (ctx: Context, next: () => Promise<any>) => void
 
 export const requireAuth = (func: KoaFuncRequest): KoaFuncRequest => {
-  // TODO check JWT token
-  return func
+  // check JWT token
+  return async (ctx: Context, next: () => Promise<any>) => {
+    try {
+      ctx.body.user = verify(ctx.request.header.authorization);
+    } catch (err) {
+      logger.error(err);
+      ctx.throw(401, 'Need authorize')
+    }
+    await func;
+  };
 };

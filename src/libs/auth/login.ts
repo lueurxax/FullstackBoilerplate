@@ -81,3 +81,9 @@ export const checkPassword = (password: string, salt: string, passwordHash: stri
         .toString('base64') === passwordHash);
   });
 };
+
+export const verify = (bearerToken: string): User => {
+  if (!bearerToken) return null;
+  const token = bearerToken.replace('Bearer ', '');
+  return jwt.verify(token, config.get('secret'));
+};

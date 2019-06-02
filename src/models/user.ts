@@ -9,8 +9,8 @@ class User extends Model {
   public email!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
-  public passwordHash!: string;
-  public salt!: string;
+  public readonly passwordHash!: string;
+  public readonly salt!: string;
 }
 
 User.init({
